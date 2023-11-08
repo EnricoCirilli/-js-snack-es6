@@ -2,38 +2,45 @@
 // variable biciDaCorsa 
 
 
-    const bicicle = {
-    rider : [
-    {
-        nome: 'Bianchi',
-       peso: 1,
-    },
-    {
+    const biciclette = [
+    
+        {
+        nome: "Bianchi",
+       peso: 14
+        },
+        {
        nome: 'Cannondale',
-        peso : 2,
-    },
-    {
+        peso : 13
+    
+        },
+        {
         nome :'Graziella',
-       peso : 4,
+       peso : 21
+       },
+     {
+       nome:'AAAA',
+       peso : 11
     },
     {
-       nome:'Pinarello',
-       peso : 3,
-    }
+        nome:'BBB',
+        peso : 16
+     },
+     {
+        nome:'CCC',
+        peso : 19
+     },
 ]
 
-};
-//Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
-const {rider} = bicicle;
+let minPeso = biciclette[0].peso;
 
-for(let i = 0; i < rider.length; i++){
+biciclette.forEach((item)=> {
+const {nome, peso} = item;
+console.log(nome, peso);
 
-    const riders = rider[i];
-    const {nome, peso} = riders;
-
-    console.log(nome, peso);
+if (peso < minPeso) {
+    minPeso = peso;
 }
 
-if (peso = 1){
-    console.log(`la bianchi ha il peso minore di ${peso}`);
-}
+});
+
+console.log(minPeso);
